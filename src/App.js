@@ -41,7 +41,7 @@ const App = () => {
   return(
     <div className='ui container' style={{ marginTop: '10px'}}>
       <SearchBar onSubmit={onSubmit} />
-      <ShortenURLs shortenUrls={shortenUrls}/>
+      {shortenUrls ? <ShortenURLs shortenUrls={shortenUrls}/> : null}
     </div>
   );
 }

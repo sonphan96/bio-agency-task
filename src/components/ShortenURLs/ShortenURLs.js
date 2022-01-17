@@ -29,7 +29,7 @@ const ShortenURLs = ({ shortenUrls }) => {
     })
 
     return(
-        <div className="ui segment">
+        <div>
             {renderUrls}
         </div>
     )

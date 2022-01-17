@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const SearchBar = ({ onSubmit }) => {
     const [text, setText] = useState('');
-    const [status, setStatus] = useState('')
+    const [error, setError] = useState('')
 
     const onFormSubmit = (e) => {
         e.preventDefault();
@@ -10,7 +10,8 @@ const SearchBar = ({ onSubmit }) => {
             onSubmit(text);
         }
         
-        text ? setStatus('Success') : setStatus('The input field is empty');
+        text ? setError('') : setError('Invalid input');
+
     }
 
     return(
@@ -28,7 +29,7 @@ const SearchBar = ({ onSubmit }) => {
                     </button>
                 </div>
                 <div>
-                    {status}
+                    {error}
                 </div>
             </form>
         </div>
