@@ -22,7 +22,7 @@ const SearchBar = ({ onSearchSubmit }) => {
                     <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
                 </div>         
 
-                <div className="four wide column" style={{ marginTop:  "25px"}}> 
+                <div className="four wide column" style={{ marginTop: '25px'}}> 
                     <button className="ui primary button" onClick={onFormSubmit}>
                         Submit
                     </button>

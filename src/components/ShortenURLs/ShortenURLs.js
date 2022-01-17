@@ -13,7 +13,7 @@ const ShortenURLs = ({ shortenUrls }) => {
 
     const renderUrls = shortenUrls.map((element, index) => {
         return (
-            <div key={index} className="ui grid">
+            <div key={index} className="ui grid segment">
                 <div className="twelve wide column">
                     {element.url}
                 </div>
@@ -29,9 +29,9 @@ const ShortenURLs = ({ shortenUrls }) => {
     })
 
     return(
-        <>
+        <div className="ui segment">
             {renderUrls}
-        </>
+        </div>
     )
 }
 
