@@ -13,27 +13,25 @@ const ShortenURLs = ({ shortenUrls }) => {
 
     const renderUrls = shortenUrls.map((element, index) => {
         return (
-            <li key={index} className='ui placeholder segment'>
-                <div>
+            <div key={index} className="ui grid">
+                <div className="twelve wide column">
                     {element.url}
                 </div>
 
-                <div>
+                <div  className="four wide column">
                     {element.shortenUrl}
-                </div>
-                <div>
-                    <button className="ui primary button" onClick={() => onCopyClick(element.shortenUrl)}>
+                    <button className="ui primary button" style={{marginLeft: "20px"}} onClick={() => onCopyClick(element.shortenUrl)}>
                         Copy
                     </button>
                 </div>
             
-            </li>)
+            </div>)
     })
 
     return(
-        <ul>
+        <>
             {renderUrls}
-        </ul>
+        </>
     )
 }
 
