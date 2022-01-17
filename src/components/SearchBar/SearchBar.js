@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
 const SearchBar = ({ onSubmit }) => {
-    const [text, setText] = useState('');
+    const [url, setUrl] = useState('');
     const [error, setError] = useState('')
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        if(text) {
-            onSubmit(text);
+        if(url) {
+            onSubmit(url);
         }
         
-        text ? setError('') : setError('Invalid input');
-
+        url ? setError('') : setError('Invalid input');
+        setUrl('');
     }
 
     return(
@@ -20,11 +20,11 @@ const SearchBar = ({ onSubmit }) => {
             
                 <div className="field twelve wide column" >
                     <label>Url Shorten</label>
-                    <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+                    <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
                 </div>         
 
                 <div className="four wide column" style={{ marginTop: '25px'}}> 
-                    <button className="ui primary button" onClick={onFormSubmit}>
+                    <button className="ui primary button" style={{ width: '100%'}} onClick={onFormSubmit}>
                         Submit
                     </button>
                 </div>

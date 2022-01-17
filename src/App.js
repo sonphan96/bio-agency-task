@@ -11,8 +11,7 @@ const App = () => {
     // Retrieve the object from storage
     var retrievedObject = localStorage.getItem('newShortenUrls');
 
-    JSON.parse(retrievedObject);
-    console.log(JSON.parse(retrievedObject));
+    // JSON.parse(retrievedObject);
     if(retrievedObject){
       setShortenUrls(JSON.parse(retrievedObject));
     }
@@ -26,7 +25,7 @@ const App = () => {
     });
 
     const obj = {
-      url: [text],
+      url: text,
       shortenUrl : data.result.short_link
     }
 
@@ -34,9 +33,8 @@ const App = () => {
     setShortenUrls(newShortenUrls);
 
     localStorage.setItem('newShortenUrls', JSON.stringify(newShortenUrls));
-
-
   }
+
 
   return(
     <div className='ui container' style={{ marginTop: '10px'}}>
