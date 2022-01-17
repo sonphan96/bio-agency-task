@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
-const SearchBar = ({ onSubmit }) => {
-    const [url, setUrl] = useState('');
-    const [error, setError] = useState('')
+import { UrlContext } from '../../context/UrlContext';
+
+const SearchBar = ({ onSubmit, setIsSuccess }) => {
+    const [error, setError] = useState('');
+    const { url, setUrl } = useContext(UrlContext);
 
     const onFormSubmit = (e) => {
         e.preventDefault();
         if(url) {
             onSubmit(url);
+            setError('')
+        } else {
+            setError('Invalid input');
+            setIsSuccess(false);
         }
         
-        url ? setError('') : setError('Invalid input');
-        setUrl('');
     }
 
     return(

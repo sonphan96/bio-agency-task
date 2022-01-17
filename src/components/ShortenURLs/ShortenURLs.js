@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ShortenURLs = ({ shortenUrls }) => {
+const ShortenURLs = ({ shortenUrls, isSuccess }) => {
 
     const onCopyClick = (text) => {
         var input = document.createElement('input');
@@ -30,6 +30,7 @@ const ShortenURLs = ({ shortenUrls }) => {
 
     return(
         <div>
+            {isSuccess && "Success"}
             {renderUrls}
         </div>
     )
