@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const SearchBar = ({ onSearchSubmit }) => {
+const SearchBar = ({ onSubmit }) => {
     const [text, setText] = useState('');
     const [status, setStatus] = useState('')
 
     const onFormSubmit = (e) => {
         e.preventDefault();
         if(text) {
-            onSearchSubmit(text);
+            onSubmit(text);
         }
         
         text ? setStatus('Success') : setStatus('The input field is empty');

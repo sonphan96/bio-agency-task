@@ -18,7 +18,7 @@ const App = () => {
     }
   }, [])
  
-  const onSearchSubmit = async (text) => {
+  const onSubmit = async (text) => {
     const {data} = await axios.get('https://api.shrtco.de/v2/shorten', {
       params: {
         url: text
@@ -40,7 +40,7 @@ const App = () => {
 
   return(
     <div className='ui container' style={{ marginTop: '10px'}}>
-      <SearchBar onSearchSubmit={onSearchSubmit} />
+      <SearchBar onSubmit={onSubmit} />
       <ShortenURLs shortenUrls={shortenUrls}/>
     </div>
   );
