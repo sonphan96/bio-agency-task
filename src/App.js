@@ -11,7 +11,7 @@ const App = () => {
     // Retrieve the object from storage
     var retrievedObject = localStorage.getItem('newShortenUrls');
 
-    // JSON.parse(retrievedObject);
+    JSON.parse(retrievedObject);
     if(retrievedObject){
       setShortenUrls(JSON.parse(retrievedObject));
     }
